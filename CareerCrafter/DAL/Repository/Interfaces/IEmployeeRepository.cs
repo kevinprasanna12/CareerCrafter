@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using DAL.Models;
 using System.Threading.Tasks;
 
 namespace DAL.Repository.Interfaces
 {
-    public class IEmployeeRepository
+    public interface IEmployeeRepository : IRepository<Employee>
     {
+        Task<Employee> GetByEmailAsync(string email);
     }
 }

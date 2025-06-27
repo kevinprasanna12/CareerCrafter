@@ -1,12 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using DAL.Models;
+using DAL.Repository;
+using DAL.Repository.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
-namespace DAL.Repository.Implementations
+namespace DAL.Repositories
 {
-    public class EmployeeRepository
+    public class EmployeeRepository : Repository<Employee>, IEmployeeRepository
     {
+        private readonly CareerCrafterDbContext _context;
+
+        public EmployeeRepository(CareerCrafterDbContext context) : base(context)
+        {
+            _context = context;
+        }
+
+        public async Task<Employee> GetByEmailAsync(string email)
+        {
+            return await _context.Employees.FirstOrDefaultAsync(e => e.ContactEmail == email);
+        }
     }
 }

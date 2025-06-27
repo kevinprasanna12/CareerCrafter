@@ -1,0 +1,12 @@
+D:\Career Crafter\CareerCrafter\CareerCrafter.DTOs\bin\Debug\net6.0\CareerCrafter.DTOs.deps.json
+D:\Career Crafter\CareerCrafter\CareerCrafter.DTOs\bin\Debug\net6.0\CareerCrafter.DTOs.dll
+D:\Career Crafter\CareerCrafter\CareerCrafter.DTOs\bin\Debug\net6.0\CareerCrafter.DTOs.pdb
+D:\Career Crafter\CareerCrafter\CareerCrafter.DTOs\obj\Debug\net6.0\CareerCrafter.DTOs.GeneratedMSBuildEditorConfig.editorconfig
+D:\Career Crafter\CareerCrafter\CareerCrafter.DTOs\obj\Debug\net6.0\CareerCrafter.DTOs.AssemblyInfoInputs.cache
+D:\Career Crafter\CareerCrafter\CareerCrafter.DTOs\obj\Debug\net6.0\CareerCrafter.DTOs.AssemblyInfo.cs
+D:\Career Crafter\CareerCrafter\CareerCrafter.DTOs\obj\Debug\net6.0\CareerCrafter.DTOs.csproj.CoreCompileInputs.cache
+D:\Career Crafter\CareerCrafter\CareerCrafter.DTOs\obj\Debug\net6.0\CareerCrafter.DTOs.sourcelink.json
+D:\Career Crafter\CareerCrafter\CareerCrafter.DTOs\obj\Debug\net6.0\CareerCrafter.DTOs.dll
+D:\Career Crafter\CareerCrafter\CareerCrafter.DTOs\obj\Debug\net6.0\refint\CareerCrafter.DTOs.dll
+D:\Career Crafter\CareerCrafter\CareerCrafter.DTOs\obj\Debug\net6.0\CareerCrafter.DTOs.pdb
+D:\Career Crafter\CareerCrafter\CareerCrafter.DTOs\obj\Debug\net6.0\ref\CareerCrafter.DTOs.dll

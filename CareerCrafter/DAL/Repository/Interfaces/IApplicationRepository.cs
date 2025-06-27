@@ -1,12 +1,12 @@
-﻿using System;
+﻿using DAL.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace DAL.Repository.Interfaces
 {
-    public class IApplicationRepository
+    public interface IApplicationRepository : IRepository<Application>
     {
+        Task<IEnumerable<Application>> GetByJobSeekerIdAsync(int jobSeekerId);
+        Task<IEnumerable<Application>> GetByJobListingIdAsync(int jobListingId);
     }
 }

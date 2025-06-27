@@ -1,0 +1,13 @@
+D:\Career Crafter\CareerCrafter\CareerCrafter.Auth\bin\Debug\net6.0\CareerCrafter.Auth.deps.json
+D:\Career Crafter\CareerCrafter\CareerCrafter.Auth\bin\Debug\net6.0\CareerCrafter.Auth.dll
+D:\Career Crafter\CareerCrafter\CareerCrafter.Auth\bin\Debug\net6.0\CareerCrafter.Auth.pdb
+D:\Career Crafter\CareerCrafter\CareerCrafter.Auth\obj\Debug\net6.0\CareerCrafter.Auth.csproj.AssemblyReference.cache
+D:\Career Crafter\CareerCrafter\CareerCrafter.Auth\obj\Debug\net6.0\CareerCrafter.Auth.GeneratedMSBuildEditorConfig.editorconfig
+D:\Career Crafter\CareerCrafter\CareerCrafter.Auth\obj\Debug\net6.0\CareerCrafter.Auth.AssemblyInfoInputs.cache
+D:\Career Crafter\CareerCrafter\CareerCrafter.Auth\obj\Debug\net6.0\CareerCrafter.Auth.AssemblyInfo.cs
+D:\Career Crafter\CareerCrafter\CareerCrafter.Auth\obj\Debug\net6.0\CareerCrafter.Auth.csproj.CoreCompileInputs.cache
+D:\Career Crafter\CareerCrafter\CareerCrafter.Auth\obj\Debug\net6.0\CareerCrafter.Auth.sourcelink.json
+D:\Career Crafter\CareerCrafter\CareerCrafter.Auth\obj\Debug\net6.0\CareerCrafter.Auth.dll
+D:\Career Crafter\CareerCrafter\CareerCrafter.Auth\obj\Debug\net6.0\refint\CareerCrafter.Auth.dll
+D:\Career Crafter\CareerCrafter\CareerCrafter.Auth\obj\Debug\net6.0\CareerCrafter.Auth.pdb
+D:\Career Crafter\CareerCrafter\CareerCrafter.Auth\obj\Debug\net6.0\ref\CareerCrafter.Auth.dll

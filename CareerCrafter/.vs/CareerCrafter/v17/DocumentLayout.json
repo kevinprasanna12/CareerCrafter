@@ -3,28 +3,8 @@
   "WorkspaceRootPath": "D:\\Career Crafter\\CareerCrafter\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B32D52B1-26EA-4A70-A21D-CA9616B395E7}|DAL\\DAL.csproj|d:\\career crafter\\careercrafter\\dal\\careercrafterdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B32D52B1-26EA-4A70-A21D-CA9616B395E7}|DAL\\DAL.csproj|solutionrelative:dal\\careercrafterdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B32D52B1-26EA-4A70-A21D-CA9616B395E7}|DAL\\DAL.csproj|d:\\career crafter\\careercrafter\\dal\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B32D52B1-26EA-4A70-A21D-CA9616B395E7}|DAL\\DAL.csproj|solutionrelative:dal\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B32D52B1-26EA-4A70-A21D-CA9616B395E7}|DAL\\DAL.csproj|d:\\career crafter\\careercrafter\\dal\\models\\application.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B32D52B1-26EA-4A70-A21D-CA9616B395E7}|DAL\\DAL.csproj|solutionrelative:dal\\models\\application.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B32D52B1-26EA-4A70-A21D-CA9616B395E7}|DAL\\DAL.csproj|d:\\career crafter\\careercrafter\\dal\\models\\jobseeker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B32D52B1-26EA-4A70-A21D-CA9616B395E7}|DAL\\DAL.csproj|solutionrelative:dal\\models\\jobseeker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B32D52B1-26EA-4A70-A21D-CA9616B395E7}|DAL\\DAL.csproj|d:\\career crafter\\careercrafter\\dal\\models\\joblisting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B32D52B1-26EA-4A70-A21D-CA9616B395E7}|DAL\\DAL.csproj|solutionrelative:dal\\models\\joblisting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B32D52B1-26EA-4A70-A21D-CA9616B395E7}|DAL\\DAL.csproj|d:\\career crafter\\careercrafter\\dal\\models\\resume.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B32D52B1-26EA-4A70-A21D-CA9616B395E7}|DAL\\DAL.csproj|solutionrelative:dal\\models\\resume.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{950BE66F-B55A-45CF-A8F3-39515C81A73A}|CareerCrafter.API\\CareerCrafter.API.csproj|d:\\career crafter\\careercrafter\\careercrafter.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{950BE66F-B55A-45CF-A8F3-39515C81A73A}|CareerCrafter.API\\CareerCrafter.API.csproj|solutionrelative:careercrafter.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,79 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CareerCrafterDbContext.cs",
-              "DocumentMoniker": "D:\\Career Crafter\\CareerCrafter\\DAL\\CareerCrafterDbContext.cs",
-              "RelativeDocumentMoniker": "DAL\\CareerCrafterDbContext.cs",
-              "ToolTip": "D:\\Career Crafter\\CareerCrafter\\DAL\\CareerCrafterDbContext.cs",
-              "RelativeToolTip": "DAL\\CareerCrafterDbContext.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAxwA8AAAA8AAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Career Crafter\\CareerCrafter\\CareerCrafter.API\\Program.cs",
+              "RelativeDocumentMoniker": "CareerCrafter.API\\Program.cs",
+              "ToolTip": "D:\\Career Crafter\\CareerCrafter\\CareerCrafter.API\\Program.cs",
+              "RelativeToolTip": "CareerCrafter.API\\Program.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAC0AAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-23T08:28:00.281Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Application.cs",
-              "DocumentMoniker": "D:\\Career Crafter\\CareerCrafter\\DAL\\Models\\Application.cs",
-              "RelativeDocumentMoniker": "DAL\\Models\\Application.cs",
-              "ToolTip": "D:\\Career Crafter\\CareerCrafter\\DAL\\Models\\Application.cs",
-              "RelativeToolTip": "DAL\\Models\\Application.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T02:39:19.512Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Resume.cs",
-              "DocumentMoniker": "D:\\Career Crafter\\CareerCrafter\\DAL\\Models\\Resume.cs",
-              "RelativeDocumentMoniker": "DAL\\Models\\Resume.cs",
-              "ToolTip": "D:\\Career Crafter\\CareerCrafter\\DAL\\Models\\Resume.cs",
-              "RelativeToolTip": "DAL\\Models\\Resume.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T02:38:33.105Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "JobListing.cs",
-              "DocumentMoniker": "D:\\Career Crafter\\CareerCrafter\\DAL\\Models\\JobListing.cs",
-              "RelativeDocumentMoniker": "DAL\\Models\\JobListing.cs",
-              "ToolTip": "D:\\Career Crafter\\CareerCrafter\\DAL\\Models\\JobListing.cs",
-              "RelativeToolTip": "DAL\\Models\\JobListing.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAADwvyMAAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T02:35:21.217Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "JobSeeker.cs",
-              "DocumentMoniker": "D:\\Career Crafter\\CareerCrafter\\DAL\\Models\\JobSeeker.cs",
-              "RelativeDocumentMoniker": "DAL\\Models\\JobSeeker.cs",
-              "ToolTip": "D:\\Career Crafter\\CareerCrafter\\DAL\\Models\\JobSeeker.cs",
-              "RelativeToolTip": "DAL\\Models\\JobSeeker.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAcwBkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T02:34:36.627Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Employee.cs",
-              "DocumentMoniker": "D:\\Career Crafter\\CareerCrafter\\DAL\\Models\\Employee.cs",
-              "RelativeDocumentMoniker": "DAL\\Models\\Employee.cs",
-              "ToolTip": "D:\\Career Crafter\\CareerCrafter\\DAL\\Models\\Employee.cs",
-              "RelativeToolTip": "DAL\\Models\\Employee.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T02:32:22.674Z",
+              "WhenOpened": "2025-06-27T05:41:32.935Z",
               "EditorCaption": ""
             }
           ]
