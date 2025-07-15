@@ -1,4 +1,6 @@
-﻿using DAL.Models;
+﻿using CareerCrafter.DTOs.EmployeeDTOs;
+using DAL.Models;
+using DAL.Repositories;
 using DAL.Repository.Interfaces;
 using Services.Interfaces;
 
@@ -13,29 +15,58 @@ namespace ServiceLayer.Implementations
             _repository = repository;
         }
 
-        public async Task<IEnumerable<Employee>> GetAllEmployeesAsync()
+        public async Task<IEnumerable<EmployeeReadDto>> GetAllEmployeesAsync()
         {
-            return await _repository.GetAllAsync();
+            var employees = await _repository.GetAllAsync();
+            return employees.Select(e => new EmployeeReadDto
+            {
+                EmployerId = e.EmployerId,
+                CompanyName = e.CompanyName,
+                ContactEmail = e.ContactEmail
+            });
         }
 
-        public async Task<Employee?> GetEmployeeByIdAsync(int id)
+        public async Task<EmployeeReadDto?> GetEmployeeByIdAsync(int id)
         {
-            return await _repository.GetByIdAsync(id);
+            var e = await _repository.GetByIdAsync(id);
+            if (e == null) return null;
+
+            return new EmployeeReadDto
+            {
+                EmployerId = e.EmployerId,
+                CompanyName = e.CompanyName,
+                ContactEmail = e.ContactEmail
+            };
         }
 
-        public async Task<Employee> CreateEmployeeAsync(Employee employee)
+        public async Task<EmployeeReadDto> CreateEmployeeAsync(EmployeeCreateDto dto, int userId)
         {
-            return await _repository.AddAsync(employee);
+            var employee = new Employee
+            {
+                CompanyName = dto.CompanyName,
+                ContactEmail = dto.ContactEmail,
+                UserId = userId
+            };
+
+            var created = await _repository.AddAsync(employee);
+
+            return new EmployeeReadDto
+            {
+                EmployerId = created.EmployerId,
+                CompanyName = created.CompanyName,
+                ContactEmail = created.ContactEmail
+            };
         }
 
-        public async Task<bool> UpdateEmployeeAsync(int id, Employee employee)
+        public async Task<bool> UpdateEmployeeAsync(int id, EmployeeUpdateDto dto)
         {
-            if (id != employee.EmployerId) return false;
-
             var existing = await _repository.GetByIdAsync(id);
             if (existing == null) return false;
 
-            await _repository.UpdateAsync(employee);
+            existing.CompanyName = dto.CompanyName;
+            existing.ContactEmail = dto.ContactEmail;
+
+            await _repository.UpdateAsync(existing);
             return true;
         }
 
@@ -47,5 +78,22 @@ namespace ServiceLayer.Implementations
             await _repository.DeleteAsync(id);
             return true;
         }
+
+        public async Task<EmployeeReadDto?> GetEmployeeByUserIdAsync(int userId)
+        {
+            var employee = await _repository.GetByUserIdAsync(userId); 
+
+            if (employee == null) return null;
+
+            return new EmployeeReadDto
+            {
+                EmployerId = employee.EmployerId,
+                CompanyName = employee.CompanyName,
+                ContactEmail = employee.ContactEmail
+            };
+        }
+
+
+
     }
 }

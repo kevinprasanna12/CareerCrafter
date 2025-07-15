@@ -1,0 +1,1 @@
+jRTD:\Career Crafter\CareerCrafter\CareerCrafterAPI.Tests\CareerCrafterAPI.Tests.csproj¢net6.0òCSharp10

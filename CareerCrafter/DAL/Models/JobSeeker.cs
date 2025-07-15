@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
 namespace DAL.Models
@@ -21,5 +21,11 @@ namespace DAL.Models
         public Resume Resume { get; set; }
 
         public ICollection<Application> Applications { get; set; }
+
+        [Required]
+        public int UserId { get; set; }  
+
+        [ForeignKey("UserId")]
+        public UserInfo User { get; set; }
     }
 }

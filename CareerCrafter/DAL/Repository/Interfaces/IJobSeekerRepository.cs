@@ -6,5 +6,6 @@ namespace DAL.Repository.Interfaces
     public interface IJobSeekerRepository : IRepository<JobSeeker>
     {
         Task<JobSeeker> GetByEmailAsync(string email);
+        Task<JobSeeker> GetByUserIdAsync(int userId);
     }
 }

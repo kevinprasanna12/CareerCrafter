@@ -1,0 +1,42 @@
+.about-container{
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: 1fr;
+    grid-template-rows: auto;
+    margin: 6rem 6rem;
+}
+
+.abouthead{
+    display: inline-block;
+    grid-column: span 3 / span 3;
+    font-size: 2.25rem;
+    font-weight: 600;
+}
+
+.aboutpara{
+    display: inline-block;
+    grid-column: span 9 / span 9;
+    font-size: 3rem;
+    line-height:1.15;
+    font-weight: 600;
+    word-spacing: 5px;
+}
+
+.aboutminiHead{
+    grid-column-start: 4;
+    grid-column-end: 7;
+    padding-top: 6rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.aboutminipara{
+    padding-top:6rem;
+    grid-column: span 5 / span 5;
+    font-weight: 600;
+    line-height: 1.75rem;
+    font-size: 1.25rem;
+
+}

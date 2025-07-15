@@ -1,0 +1,49 @@
+.container{
+    margin: 8rem auto;
+}
+.application-head{
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.title{
+    font-size: 2rem;
+}
+
+.approved-btn{
+    border: 3px solid #083D77;
+    color: #083D77;
+    transition: all .3s;
+
+    &:hover{
+        background-color: green;
+        color: whitesmoke;
+    }
+}
+
+.pending-btn{
+    border: 3px solid #083D77;
+    color: #083D77;
+    transition: all .3s;
+
+    &:hover{
+        background-color: #D7A859;
+        color: #083D77;
+    }
+}
+
+.reviewed-btn{
+    border: 3px solid #083D77;
+    color: #083D77;
+    transition: all .3s;
+
+
+    &:hover{
+        background-color: gray;
+        color: #083D77;
+    }
+}
+
+.resume{
+    cursor: pointer;
+}

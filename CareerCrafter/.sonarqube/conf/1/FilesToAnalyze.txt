@@ -1,0 +1,4 @@
+﻿D:\Career Crafter\CareerCrafter\CareerCrafter.Auth\IJwtService.cs
+D:\Career Crafter\CareerCrafter\CareerCrafter.Auth\JwtService.cs
+C:\Users\Kevin Prasanna\.nuget\packages\xunit.runner.visualstudio\3.1.2\build\net472\xunit.abstractions.dll
+C:\Users\Kevin Prasanna\.nuget\packages\xunit.runner.visualstudio\3.1.2\build\net472\xunit.runner.visualstudio.testadapter.dll

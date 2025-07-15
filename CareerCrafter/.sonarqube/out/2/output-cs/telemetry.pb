@@ -1,0 +1,1 @@
+DR.D:\Career Crafter\CareerCrafter\DAL\DAL.csproj¢net6.0òCSharp10

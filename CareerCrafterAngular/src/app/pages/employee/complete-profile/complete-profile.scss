@@ -1,0 +1,27 @@
+.container{
+    height: 80vh;
+
+    .card {
+        border-radius: 0.5rem;
+        background-color: #083D77;
+
+        h2{
+            color: #D7A859;
+        }
+        label{
+            color: whitesmoke;
+        }
+      }
+
+      button{
+        margin-top: 1rem;
+        background-color: #D7A859;
+        transition: all .3s;
+
+        &:hover{
+            transform: scale(1.02);
+
+        }
+      }
+    
+}

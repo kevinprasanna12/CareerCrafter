@@ -1,4 +1,5 @@
-﻿using DAL.Models;
+﻿using CareerCrafter.DTOs.JobSeekerDTOs;
+using DAL.Models;
 using DAL.Repository.Interfaces;
 using Services.Interfaces;
 
@@ -13,29 +14,58 @@ namespace Services.Implementations
             _repository = repository;
         }
 
-        public async Task<IEnumerable<JobSeeker>> GetAllAsync()
+        public async Task<IEnumerable<JobSeekerReadDto>> GetAllAsync()
         {
-            return await _repository.GetAllAsync();
+            var seekers = await _repository.GetAllAsync();
+            return seekers.Select(s => new JobSeekerReadDto
+            {
+                JobSeekerId = s.JobSeekerId,
+                FullName = s.FullName,
+                Email = s.Email
+            });
         }
 
-        public async Task<JobSeeker?> GetByIdAsync(int id)
+        public async Task<JobSeekerReadDto?> GetByIdAsync(int id)
         {
-            return await _repository.GetByIdAsync(id);
+            var s = await _repository.GetByIdAsync(id);
+            if (s == null) return null;
+
+            return new JobSeekerReadDto
+            {
+                JobSeekerId = s.JobSeekerId,
+                FullName = s.FullName,
+                Email = s.Email
+            };
         }
 
-        public async Task<JobSeeker> CreateAsync(JobSeeker jobSeeker)
+        public async Task<JobSeekerReadDto> CreateAsync(JobSeekerCreateDto dto, int userId)
         {
-            return await _repository.AddAsync(jobSeeker);
+            var seeker = new JobSeeker
+            {
+                FullName = dto.FullName,
+                Email = dto.Email,
+                UserId = userId
+            };
+
+            var created = await _repository.AddAsync(seeker);
+
+            return new JobSeekerReadDto
+            {
+                JobSeekerId = created.JobSeekerId,
+                FullName = created.FullName,
+                Email = created.Email
+            };
         }
 
-        public async Task<bool> UpdateAsync(int id, JobSeeker jobSeeker)
+        public async Task<bool> UpdateAsync(int id, JobSeekerUpdateDto dto)
         {
-            if (id != jobSeeker.JobSeekerId) return false;
-
             var existing = await _repository.GetByIdAsync(id);
             if (existing == null) return false;
 
-            await _repository.UpdateAsync(jobSeeker);
+            existing.FullName = dto.FullName;
+            existing.Email = dto.Email;
+
+            await _repository.UpdateAsync(existing);
             return true;
         }
 
@@ -47,5 +77,22 @@ namespace Services.Implementations
             await _repository.DeleteAsync(id);
             return true;
         }
+
+        public async Task<JobSeekerReadDto> GetByUserIdAsync(int userId)
+        {
+            var jobSeeker = await _repository.GetByUserIdAsync(userId);
+            if (jobSeeker == null)
+                return null;
+
+            return new JobSeekerReadDto
+            {
+                JobSeekerId = jobSeeker.JobSeekerId,
+                FullName = jobSeeker.FullName,
+                Email = jobSeeker.Email,
+                
+                
+            };
+        }
+
     }
 }

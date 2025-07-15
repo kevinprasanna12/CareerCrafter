@@ -26,6 +26,10 @@ namespace DAL.Models
         [StringLength(500)]
         public string Qualifications { get; set; }
 
+
+        public decimal? Salary { get; set; }
+
+
         [Required]
         public int EmployerId { get; set; }
 

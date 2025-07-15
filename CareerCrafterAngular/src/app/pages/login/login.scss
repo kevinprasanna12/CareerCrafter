@@ -1,0 +1,46 @@
+.container{
+    height: 80vh;
+    margin-bottom: 4rem;
+
+    h2{
+        color: #D7A859;
+    }
+    label{
+        color: whitesmoke;
+    }
+    .fpass{
+        color: #D7A859;
+        &:hover{
+            opacity: .9;
+            text-decoration: underline;
+            
+        }
+    }
+
+    .btn{
+        // font-weight: 800;
+        color: #083D77;
+        background-color: #D7A859;
+        border: none;
+        transition: all .3s;
+        &:hover{
+            transform: scale(1.03);
+        }
+    }
+    .sign-btn{
+        color: #D7A859;
+        transition: all .3s ;
+        
+
+        &:hover{
+            opacity: .9;
+            text-decoration: underline;
+        }
+    }
+}
+  
+  .card {
+    background-color: #083D77;
+    border-radius: 0.75rem;
+  }
+  

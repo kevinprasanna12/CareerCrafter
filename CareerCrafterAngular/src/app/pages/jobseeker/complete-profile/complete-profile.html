@@ -1,0 +1,38 @@
+<div class="container d-flex align-items-center justify-content-center bg-light">
+    <div class="card shadow p-4" style="max-width: 400px; width: 100%;">
+      <h2 class="text-center mb-4">Complete Job Seeker Profile</h2>
+  
+      <form (ngSubmit)="saveProfile()">
+        <div class="mb-3">
+          <label for="fullName" class="form-label">Full Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="fullName"
+            placeholder="Enter your full name"
+            [(ngModel)]="fullName"
+            name="fullName"
+            required
+          />
+        </div>
+  
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="Enter your email"
+            [(ngModel)]="email"
+            name="email"
+            required
+          />
+        </div>
+  
+        <button type="submit" class="btn w-100">
+          Save Profile
+        </button>
+      </form>
+    </div>
+  </div>
+  

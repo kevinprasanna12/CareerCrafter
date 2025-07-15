@@ -1,0 +1,82 @@
+<div class="container mt-5 mb-5">
+    <h2 class="mb-4 text-center">Edit Job Listing</h2>
+  
+    <form *ngIf="editForm" [formGroup]="editForm" (ngSubmit)="onSubmit()" class="card p-4 shadow-sm">
+      <div class="mb-3">
+        <label for="title" class="form-label">Job Title</label>
+        <input
+          type="text"
+          id="title"
+          class="form-control"
+          formControlName="title"
+          placeholder="Enter job title"
+        />
+        <div *ngIf="editForm.get('title')?.touched && editForm.get('title')?.invalid" class="text-danger">
+          Title is required.
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea
+          id="description"
+          class="form-control"
+          formControlName="description"
+          rows="3"
+          placeholder="Enter job description"
+        ></textarea>
+        <div *ngIf="editForm.get('description')?.touched && editForm.get('description')?.invalid" class="text-danger">
+          Description is required.
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input
+          type="text"
+          id="location"
+          class="form-control"
+          formControlName="location"
+          placeholder="Enter job location"
+        />
+        <div *ngIf="editForm.get('location')?.touched && editForm.get('location')?.invalid" class="text-danger">
+          Location is required.
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label for="qualifications" class="form-label">Qualifications</label>
+        <input
+          type="text"
+          id="qualifications"
+          class="form-control"
+          formControlName="qualifications"
+          placeholder="Enter required qualifications"
+        />
+        <div *ngIf="editForm.get('qualifications')?.touched && editForm.get('qualifications')?.invalid" class="text-danger">
+          Qualifications are required.
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label for="salary" class="form-label">Salary</label>
+        <input
+          type="number"
+          id="salary"
+          class="form-control"
+          formControlName="salary"
+          placeholder="Enter salary"
+        />
+        <div *ngIf="editForm.get('salary')?.touched && editForm.get('salary')?.invalid" class="text-danger">
+          Salary is required and must be non-negative.
+        </div>
+      </div>
+  
+      <div class="d-flex gap-4">
+        <button type="submit" class="btn btn-primary" [disabled]="editForm.invalid">Save Changes</button>
+        <button type="button" class="btn btn-secondary" (click)="router.navigate(['/employee/dashboard'])">Cancel</button>
+        <button type="button" class="btn btn-danger" (click)="deleteJobListing(this.jobListingId)">Delete</button>
+      </div>
+    </form>
+  </div>
+  

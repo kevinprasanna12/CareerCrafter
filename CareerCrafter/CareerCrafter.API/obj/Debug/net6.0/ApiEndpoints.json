@@ -1,71 +1,8 @@
 [
   {
     "ContainingType": "CareerCrafterAPI.Controllers.ApplicationController",
-    "Method": "GetAll",
-    "RelativePath": "api/Application",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "CareerCrafterAPI.Controllers.ApplicationController",
-    "Method": "Create",
-    "RelativePath": "api/Application",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "application",
-        "Type": "DAL.Models.Application",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "CareerCrafterAPI.Controllers.ApplicationController",
-    "Method": "GetById",
-    "RelativePath": "api/Application/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "CareerCrafterAPI.Controllers.ApplicationController",
-    "Method": "Update",
-    "RelativePath": "api/Application/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "application",
-        "Type": "DAL.Models.Application",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "CareerCrafterAPI.Controllers.ApplicationController",
     "Method": "Delete",
-    "RelativePath": "api/Application/{id}",
+    "RelativePath": "api/v1/Application/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -80,8 +17,29 @@
   },
   {
     "ContainingType": "CareerCrafterAPI.Controllers.ApplicationController",
+    "Method": "Update",
+    "RelativePath": "api/v1/Application/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "CareerCrafter.DTOs.ApplicationDTOs.ApplicationUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CareerCrafterAPI.Controllers.ApplicationController",
     "Method": "ApplyToJob",
-    "RelativePath": "api/Application/apply",
+    "RelativePath": "api/v1/Application/apply",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -97,7 +55,37 @@
   {
     "ContainingType": "CareerCrafterAPI.Controllers.ApplicationController",
     "Method": "GetMyApplications",
-    "RelativePath": "api/Application/my-applications",
+    "RelativePath": "api/v1/Application/my-applications",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CareerCrafterAPI.Controllers.ApplicationController",
+    "Method": "GetMyApplicationCount",
+    "RelativePath": "api/v1/Application/my-applications/count",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CareerCrafterAPI.Controllers.ApplicationController",
+    "Method": "GetMyJobApplicants",
+    "RelativePath": "api/v1/Application/my-job-applicants",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CareerCrafterAPI.Controllers.ApplicationController",
+    "Method": "GetJobListingApplicationCounts",
+    "RelativePath": "api/v1/Application/my-job-applicants/count",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -107,7 +95,7 @@
   {
     "ContainingType": "CareerCrafter.API.Controllers.AuthController",
     "Method": "Login",
-    "RelativePath": "api/Auth/login",
+    "RelativePath": "api/v1/Auth/login",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -123,7 +111,7 @@
   {
     "ContainingType": "CareerCrafter.API.Controllers.AuthController",
     "Method": "Register",
-    "RelativePath": "api/Auth/register",
+    "RelativePath": "api/v1/Auth/register",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -138,41 +126,21 @@
   },
   {
     "ContainingType": "CareerCrafterAPI.Controllers.EmployeeController",
-    "Method": "GetAll",
-    "RelativePath": "api/Employee",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[DAL.Models.Employee, DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "CareerCrafterAPI.Controllers.EmployeeController",
     "Method": "Create",
-    "RelativePath": "api/Employee",
+    "RelativePath": "api/v1/Employee",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "employee",
-        "Type": "DAL.Models.Employee",
+        "Name": "dto",
+        "Type": "CareerCrafter.DTOs.EmployeeDTOs.EmployeeCreateDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "DAL.Models.Employee",
+        "Type": "CareerCrafter.DTOs.EmployeeDTOs.EmployeeReadDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -185,7 +153,7 @@
   {
     "ContainingType": "CareerCrafterAPI.Controllers.EmployeeController",
     "Method": "GetById",
-    "RelativePath": "api/Employee/{id}",
+    "RelativePath": "api/v1/Employee/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -198,7 +166,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "DAL.Models.Employee",
+        "Type": "CareerCrafter.DTOs.EmployeeDTOs.EmployeeReadDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -211,7 +179,7 @@
   {
     "ContainingType": "CareerCrafterAPI.Controllers.EmployeeController",
     "Method": "Update",
-    "RelativePath": "api/Employee/{id}",
+    "RelativePath": "api/v1/Employee/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -222,8 +190,8 @@
         "IsRequired": true
       },
       {
-        "Name": "employee",
-        "Type": "DAL.Models.Employee",
+        "Name": "dto",
+        "Type": "CareerCrafter.DTOs.EmployeeDTOs.EmployeeUpdateDto",
         "IsRequired": true
       }
     ],
@@ -232,7 +200,7 @@
   {
     "ContainingType": "CareerCrafterAPI.Controllers.EmployeeController",
     "Method": "Delete",
-    "RelativePath": "api/Employee/{id}",
+    "RelativePath": "api/v1/Employee/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -246,16 +214,42 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "CareerCrafterAPI.Controllers.EmployeeController",
+    "Method": "GetByUserId",
+    "RelativePath": "api/v1/Employee/user/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CareerCrafter.DTOs.EmployeeDTOs.EmployeeReadDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "CareerCrafterAPI.Controllers.JobListingController",
     "Method": "GetAll",
-    "RelativePath": "api/JobListing",
+    "RelativePath": "api/v1/JobListing",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[DAL.Models.JobListing, DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[CareerCrafter.DTOs.JobListingDTOs.JobListingReadDto, CareerCrafter.DTOs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -268,33 +262,42 @@
   {
     "ContainingType": "CareerCrafterAPI.Controllers.JobListingController",
     "Method": "Create",
-    "RelativePath": "api/JobListing",
+    "RelativePath": "api/v1/JobListing",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "jobListing",
-        "Type": "DAL.Models.JobListing",
+        "Name": "dto",
+        "Type": "CareerCrafter.DTOs.JobListingDTOs.JobListingCreateDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "DAL.Models.JobListing",
+        "Type": "CareerCrafter.DTOs.JobListingDTOs.JobListingReadDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
           "text/json"
         ],
-        "StatusCode": 200
+        "StatusCode": 201
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
       }
     ]
   },
   {
     "ContainingType": "CareerCrafterAPI.Controllers.JobListingController",
     "Method": "GetById",
-    "RelativePath": "api/JobListing/{id}",
+    "RelativePath": "api/v1/JobListing/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -307,7 +310,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "DAL.Models.JobListing",
+        "Type": "CareerCrafter.DTOs.JobListingDTOs.JobListingReadDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -320,7 +323,7 @@
   {
     "ContainingType": "CareerCrafterAPI.Controllers.JobListingController",
     "Method": "Update",
-    "RelativePath": "api/JobListing/{id}",
+    "RelativePath": "api/v1/JobListing/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -331,17 +334,41 @@
         "IsRequired": true
       },
       {
-        "Name": "jobListing",
-        "Type": "DAL.Models.JobListing",
+        "Name": "dto",
+        "Type": "CareerCrafter.DTOs.JobListingDTOs.JobListingUpdateDto",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 204
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 403
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
   },
   {
     "ContainingType": "CareerCrafterAPI.Controllers.JobListingController",
     "Method": "Delete",
-    "RelativePath": "api/JobListing/{id}",
+    "RelativePath": "api/v1/JobListing/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -357,24 +384,14 @@
   {
     "ContainingType": "CareerCrafterAPI.Controllers.JobListingController",
     "Method": "GetMyJobs",
-    "RelativePath": "api/JobListing/my-jobs",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "CareerCrafterAPI.Controllers.JobSeekerController",
-    "Method": "GetAll",
-    "RelativePath": "api/JobSeeker",
+    "RelativePath": "api/v1/JobListing/my-jobs",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[DAL.Models.JobSeeker, DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[CareerCrafter.DTOs.JobListingDTOs.JobListingReadDto, CareerCrafter.DTOs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -387,20 +404,20 @@
   {
     "ContainingType": "CareerCrafterAPI.Controllers.JobSeekerController",
     "Method": "Create",
-    "RelativePath": "api/JobSeeker",
+    "RelativePath": "api/v1/JobSeeker",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "jobSeeker",
-        "Type": "DAL.Models.JobSeeker",
+        "Name": "dto",
+        "Type": "CareerCrafter.DTOs.JobSeekerDTOs.JobSeekerCreateDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "DAL.Models.JobSeeker",
+        "Type": "CareerCrafter.DTOs.JobSeekerDTOs.JobSeekerReadDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -413,7 +430,7 @@
   {
     "ContainingType": "CareerCrafterAPI.Controllers.JobSeekerController",
     "Method": "GetById",
-    "RelativePath": "api/JobSeeker/{id}",
+    "RelativePath": "api/v1/JobSeeker/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -426,7 +443,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "DAL.Models.JobSeeker",
+        "Type": "CareerCrafter.DTOs.JobSeekerDTOs.JobSeekerReadDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -439,7 +456,7 @@
   {
     "ContainingType": "CareerCrafterAPI.Controllers.JobSeekerController",
     "Method": "Update",
-    "RelativePath": "api/JobSeeker/{id}",
+    "RelativePath": "api/v1/JobSeeker/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -450,8 +467,8 @@
         "IsRequired": true
       },
       {
-        "Name": "jobSeeker",
-        "Type": "DAL.Models.JobSeeker",
+        "Name": "dto",
+        "Type": "CareerCrafter.DTOs.JobSeekerDTOs.JobSeekerUpdateDto",
         "IsRequired": true
       }
     ],
@@ -460,7 +477,110 @@
   {
     "ContainingType": "CareerCrafterAPI.Controllers.JobSeekerController",
     "Method": "Delete",
-    "RelativePath": "api/JobSeeker/{id}",
+    "RelativePath": "api/v1/JobSeeker/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CareerCrafterAPI.Controllers.JobSeekerController",
+    "Method": "GetMyProfile",
+    "RelativePath": "api/v1/JobSeeker/my-profile",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "CareerCrafter.DTOs.JobSeekerDTOs.JobSeekerReadDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CareerCrafterAPI.Controllers.ResumeController",
+    "Method": "GetAll",
+    "RelativePath": "api/v1/Resume",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[CareerCrafter.DTOs.ResumeDTOs.ResumeReadDto, CareerCrafter.DTOs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CareerCrafterAPI.Controllers.ResumeController",
+    "Method": "GetById",
+    "RelativePath": "api/v1/Resume/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CareerCrafter.DTOs.ResumeDTOs.ResumeReadDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CareerCrafterAPI.Controllers.ResumeController",
+    "Method": "Update",
+    "RelativePath": "api/v1/Resume/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "CareerCrafter.DTOs.ResumeDTOs.ResumeUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CareerCrafterAPI.Controllers.ResumeController",
+    "Method": "Delete",
+    "RelativePath": "api/v1/Resume/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -475,15 +595,31 @@
   },
   {
     "ContainingType": "CareerCrafterAPI.Controllers.ResumeController",
-    "Method": "GetAll",
-    "RelativePath": "api/Resume",
+    "Method": "DownloadResume",
+    "RelativePath": "api/v1/Resume/download/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CareerCrafterAPI.Controllers.ResumeController",
+    "Method": "GetMyResumeId",
+    "RelativePath": "api/v1/Resume/my-resume-id",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[DAL.Models.Resume, DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Int32",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -492,100 +628,11 @@
         "StatusCode": 200
       }
     ]
-  },
-  {
-    "ContainingType": "CareerCrafterAPI.Controllers.ResumeController",
-    "Method": "Create",
-    "RelativePath": "api/Resume",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "resume",
-        "Type": "DAL.Models.Resume",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "DAL.Models.Resume",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "CareerCrafterAPI.Controllers.ResumeController",
-    "Method": "GetById",
-    "RelativePath": "api/Resume/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "DAL.Models.Resume",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "CareerCrafterAPI.Controllers.ResumeController",
-    "Method": "Update",
-    "RelativePath": "api/Resume/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "resume",
-        "Type": "DAL.Models.Resume",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "CareerCrafterAPI.Controllers.ResumeController",
-    "Method": "Delete",
-    "RelativePath": "api/Resume/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
   },
   {
     "ContainingType": "CareerCrafterAPI.Controllers.ResumeController",
     "Method": "UploadResume",
-    "RelativePath": "api/Resume/upload-resume",
+    "RelativePath": "api/v1/Resume/upload-resume",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

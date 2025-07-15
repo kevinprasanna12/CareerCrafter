@@ -1,21 +1,11 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "CareerCrafter.API",
-    "version": "1.0"
+    "title": "CareerCrafterAPI",
+    "version": "v1"
   },
   "paths": {
-    "/api/Application": {
-      "get": {
-        "tags": [
-          "Application"
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      },
+    "/api/v1/Application/apply": {
       "post": {
         "tags": [
           "Application"
@@ -24,17 +14,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Application"
+                "type": "integer",
+                "format": "int32"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Application"
+                "type": "integer",
+                "format": "int32"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Application"
+                "type": "integer",
+                "format": "int32"
               }
             }
           }
@@ -46,8 +39,32 @@
         }
       }
     },
-    "/api/Application/{id}": {
+    "/api/v1/Application/my-applications": {
       "get": {
+        "tags": [
+          "Application"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/Application/my-applications/count": {
+      "get": {
+        "tags": [
+          "Application"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/Application/{id}": {
+      "delete": {
         "tags": [
           "Application"
         ],
@@ -87,17 +104,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Application"
+                "$ref": "#/components/schemas/ApplicationUpdateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Application"
+                "$ref": "#/components/schemas/ApplicationUpdateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Application"
+                "$ref": "#/components/schemas/ApplicationUpdateDto"
               }
             }
           }
@@ -107,30 +124,9 @@
             "description": "Success"
           }
         }
-      },
-      "delete": {
-        "tags": [
-          "Application"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
       }
     },
-    "/api/Application/my-applications": {
+    "/api/v1/Application/my-job-applicants": {
       "get": {
         "tags": [
           "Application"
@@ -142,33 +138,11 @@
         }
       }
     },
-    "/api/Application/apply": {
-      "post": {
+    "/api/v1/Application/my-job-applicants/count": {
+      "get": {
         "tags": [
           "Application"
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "integer",
-                "format": "int32"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "type": "integer",
-                "format": "int32"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "type": "integer",
-                "format": "int32"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "Success"
@@ -176,7 +150,7 @@
         }
       }
     },
-    "/api/Auth/login": {
+    "/api/v1/Auth/login": {
       "post": {
         "tags": [
           "Auth"
@@ -207,7 +181,7 @@
         }
       }
     },
-    "/api/Auth/register": {
+    "/api/v1/Auth/register": {
       "post": {
         "tags": [
           "Auth"
@@ -238,91 +212,7 @@
         }
       }
     },
-    "/api/Employee": {
-      "get": {
-        "tags": [
-          "Employee"
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Employee"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Employee"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Employee"
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Employee"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Employee"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Employee"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Employee"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Employee"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Employee"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Employee"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Employee/{id}": {
+    "/api/v1/Employee/{id}": {
       "get": {
         "tags": [
           "Employee"
@@ -344,17 +234,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Employee"
+                  "$ref": "#/components/schemas/EmployeeReadDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Employee"
+                  "$ref": "#/components/schemas/EmployeeReadDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Employee"
+                  "$ref": "#/components/schemas/EmployeeReadDto"
                 }
               }
             }
@@ -380,17 +270,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Employee"
+                "$ref": "#/components/schemas/EmployeeUpdateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Employee"
+                "$ref": "#/components/schemas/EmployeeUpdateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Employee"
+                "$ref": "#/components/schemas/EmployeeUpdateDto"
               }
             }
           }
@@ -423,7 +313,95 @@
         }
       }
     },
-    "/api/JobListing": {
+    "/api/v1/Employee": {
+      "post": {
+        "tags": [
+          "Employee"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmployeeCreateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmployeeCreateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmployeeCreateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmployeeReadDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmployeeReadDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmployeeReadDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/Employee/user/{userId}": {
+      "get": {
+        "tags": [
+          "Employee"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmployeeReadDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmployeeReadDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmployeeReadDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/JobListing": {
       "get": {
         "tags": [
           "JobListing"
@@ -436,7 +414,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/JobListing"
+                    "$ref": "#/components/schemas/JobListingReadDto"
                   }
                 }
               },
@@ -444,7 +422,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/JobListing"
+                    "$ref": "#/components/schemas/JobListingReadDto"
                   }
                 }
               },
@@ -452,7 +430,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/JobListing"
+                    "$ref": "#/components/schemas/JobListingReadDto"
                   }
                 }
               }
@@ -468,38 +446,58 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/JobListing"
+                "$ref": "#/components/schemas/JobListingCreateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/JobListing"
+                "$ref": "#/components/schemas/JobListingCreateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/JobListing"
+                "$ref": "#/components/schemas/JobListingCreateDto"
               }
             }
           }
         },
         "responses": {
-          "200": {
-            "description": "Success",
+          "201": {
+            "description": "Created",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/JobListing"
+                  "$ref": "#/components/schemas/JobListingReadDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/JobListing"
+                  "$ref": "#/components/schemas/JobListingReadDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/JobListing"
+                  "$ref": "#/components/schemas/JobListingReadDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
                 }
               }
             }
@@ -507,7 +505,7 @@
         }
       }
     },
-    "/api/JobListing/{id}": {
+    "/api/v1/JobListing/{id}": {
       "get": {
         "tags": [
           "JobListing"
@@ -529,17 +527,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/JobListing"
+                  "$ref": "#/components/schemas/JobListingReadDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/JobListing"
+                  "$ref": "#/components/schemas/JobListingReadDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/JobListing"
+                  "$ref": "#/components/schemas/JobListingReadDto"
                 }
               }
             }
@@ -565,24 +563,64 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/JobListing"
+                "$ref": "#/components/schemas/JobListingUpdateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/JobListing"
+                "$ref": "#/components/schemas/JobListingUpdateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/JobListing"
+                "$ref": "#/components/schemas/JobListingUpdateDto"
               }
             }
           }
         },
         "responses": {
-          "200": {
-            "description": "Success"
+          "204": {
+            "description": "No Content"
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
           }
         }
       },
@@ -608,32 +646,20 @@
         }
       }
     },
-    "/api/JobListing/my-jobs": {
+    "/api/v1/JobListing/my-jobs": {
       "get": {
         "tags": [
           "JobListing"
         ],
         "responses": {
           "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/JobSeeker": {
-      "get": {
-        "tags": [
-          "JobSeeker"
-        ],
-        "responses": {
-          "200": {
             "description": "Success",
             "content": {
               "text/plain": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/JobSeeker"
+                    "$ref": "#/components/schemas/JobListingReadDto"
                   }
                 }
               },
@@ -641,7 +667,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/JobSeeker"
+                    "$ref": "#/components/schemas/JobListingReadDto"
                   }
                 }
               },
@@ -649,54 +675,8 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/JobSeeker"
+                    "$ref": "#/components/schemas/JobListingReadDto"
                   }
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "JobSeeker"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/JobSeeker"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/JobSeeker"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/JobSeeker"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/JobSeeker"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/JobSeeker"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/JobSeeker"
                 }
               }
             }
@@ -704,7 +684,7 @@
         }
       }
     },
-    "/api/JobSeeker/{id}": {
+    "/api/v1/JobSeeker/{id}": {
       "get": {
         "tags": [
           "JobSeeker"
@@ -726,17 +706,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/JobSeeker"
+                  "$ref": "#/components/schemas/JobSeekerReadDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/JobSeeker"
+                  "$ref": "#/components/schemas/JobSeekerReadDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/JobSeeker"
+                  "$ref": "#/components/schemas/JobSeekerReadDto"
                 }
               }
             }
@@ -762,17 +742,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/JobSeeker"
+                "$ref": "#/components/schemas/JobSeekerUpdateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/JobSeeker"
+                "$ref": "#/components/schemas/JobSeekerUpdateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/JobSeeker"
+                "$ref": "#/components/schemas/JobSeekerUpdateDto"
               }
             }
           }
@@ -805,7 +785,84 @@
         }
       }
     },
-    "/api/Resume": {
+    "/api/v1/JobSeeker": {
+      "post": {
+        "tags": [
+          "JobSeeker"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/JobSeekerCreateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/JobSeekerCreateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/JobSeekerCreateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobSeekerReadDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobSeekerReadDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobSeekerReadDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/JobSeeker/my-profile": {
+      "get": {
+        "tags": [
+          "JobSeeker"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobSeekerReadDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobSeekerReadDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobSeekerReadDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/Resume": {
       "get": {
         "tags": [
           "Resume"
@@ -818,7 +875,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Resume"
+                    "$ref": "#/components/schemas/ResumeReadDto"
                   }
                 }
               },
@@ -826,7 +883,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Resume"
+                    "$ref": "#/components/schemas/ResumeReadDto"
                   }
                 }
               },
@@ -834,54 +891,8 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Resume"
+                    "$ref": "#/components/schemas/ResumeReadDto"
                   }
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Resume"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Resume"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Resume"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Resume"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Resume"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Resume"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Resume"
                 }
               }
             }
@@ -889,7 +900,7 @@
         }
       }
     },
-    "/api/Resume/{id}": {
+    "/api/v1/Resume/{id}": {
       "get": {
         "tags": [
           "Resume"
@@ -911,17 +922,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Resume"
+                  "$ref": "#/components/schemas/ResumeReadDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Resume"
+                  "$ref": "#/components/schemas/ResumeReadDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Resume"
+                  "$ref": "#/components/schemas/ResumeReadDto"
                 }
               }
             }
@@ -947,17 +958,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Resume"
+                "$ref": "#/components/schemas/ResumeUpdateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Resume"
+                "$ref": "#/components/schemas/ResumeUpdateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Resume"
+                "$ref": "#/components/schemas/ResumeUpdateDto"
               }
             }
           }
@@ -990,7 +1001,7 @@
         }
       }
     },
-    "/api/Resume/upload-resume": {
+    "/api/v1/Resume/upload-resume": {
       "post": {
         "tags": [
           "Resume"
@@ -1021,41 +1032,71 @@
           }
         }
       }
+    },
+    "/api/v1/Resume/download/{id}": {
+      "get": {
+        "tags": [
+          "Resume"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/Resume/my-resume-id": {
+      "get": {
+        "tags": [
+          "Resume"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
-      "Application": {
+      "ApplicationUpdateDto": {
         "required": [
-          "appliedDate",
-          "jobListingId",
-          "jobSeekerId",
           "status"
         ],
         "type": "object",
         "properties": {
-          "applicationId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "jobSeekerId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "jobSeeker": {
-            "$ref": "#/components/schemas/JobSeeker"
-          },
-          "jobListingId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "jobListing": {
-            "$ref": "#/components/schemas/JobListing"
-          },
-          "appliedDate": {
-            "type": "string",
-            "format": "date-time"
-          },
           "status": {
             "maxLength": 50,
             "minLength": 0,
@@ -1064,17 +1105,13 @@
         },
         "additionalProperties": false
       },
-      "Employee": {
+      "EmployeeCreateDto": {
         "required": [
           "companyName",
           "contactEmail"
         ],
         "type": "object",
         "properties": {
-          "employerId": {
-            "type": "integer",
-            "format": "int32"
-          },
           "companyName": {
             "maxLength": 100,
             "minLength": 0,
@@ -1085,30 +1122,58 @@
             "minLength": 0,
             "type": "string",
             "format": "email"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EmployeeReadDto": {
+        "type": "object",
+        "properties": {
+          "employerId": {
+            "type": "integer",
+            "format": "int32"
           },
-          "jobListings": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/JobListing"
-            },
+          "companyName": {
+            "type": "string",
+            "nullable": true
+          },
+          "contactEmail": {
+            "type": "string",
             "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "JobListing": {
+      "EmployeeUpdateDto": {
         "required": [
-          "employerId",
+          "companyName",
+          "contactEmail"
+        ],
+        "type": "object",
+        "properties": {
+          "companyName": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
+          },
+          "contactEmail": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "format": "email"
+          }
+        },
+        "additionalProperties": false
+      },
+      "JobListingCreateDto": {
+        "required": [
           "location",
           "qualifications",
+          "salary",
           "title"
         ],
         "type": "object",
         "properties": {
-          "jobListingId": {
-            "type": "integer",
-            "format": "int32"
-          },
           "title": {
             "maxLength": 100,
             "minLength": 0,
@@ -1130,34 +1195,95 @@
             "minLength": 0,
             "type": "string"
           },
+          "salary": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "JobListingReadDto": {
+        "type": "object",
+        "properties": {
+          "jobListingId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "location": {
+            "type": "string",
+            "nullable": true
+          },
+          "qualifications": {
+            "type": "string",
+            "nullable": true
+          },
+          "salary": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
           "employerId": {
             "type": "integer",
             "format": "int32"
           },
-          "employer": {
-            "$ref": "#/components/schemas/Employee"
-          },
-          "applications": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Application"
-            },
+          "companyName": {
+            "type": "string",
             "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "JobSeeker": {
+      "JobListingUpdateDto": {
+        "required": [
+          "location",
+          "qualifications",
+          "title"
+        ],
+        "type": "object",
+        "properties": {
+          "title": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
+          },
+          "description": {
+            "maxLength": 1000,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "location": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
+          },
+          "qualifications": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string"
+          },
+          "salary": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "JobSeekerCreateDto": {
         "required": [
           "email",
           "fullName"
         ],
         "type": "object",
         "properties": {
-          "jobSeekerId": {
-            "type": "integer",
-            "format": "int32"
-          },
           "fullName": {
             "maxLength": 100,
             "minLength": 0,
@@ -1168,16 +1294,45 @@
             "minLength": 0,
             "type": "string",
             "format": "email"
+          }
+        },
+        "additionalProperties": false
+      },
+      "JobSeekerReadDto": {
+        "type": "object",
+        "properties": {
+          "jobSeekerId": {
+            "type": "integer",
+            "format": "int32"
           },
-          "resume": {
-            "$ref": "#/components/schemas/Resume"
-          },
-          "applications": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Application"
-            },
+          "fullName": {
+            "type": "string",
             "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "JobSeekerUpdateDto": {
+        "required": [
+          "email",
+          "fullName"
+        ],
+        "type": "object",
+        "properties": {
+          "fullName": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
+          },
+          "email": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "format": "email"
           }
         },
         "additionalProperties": false
@@ -1195,6 +1350,33 @@
           }
         },
         "additionalProperties": false
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": { }
       },
       "RegisterDTO": {
         "type": "object",
@@ -1218,17 +1400,31 @@
         },
         "additionalProperties": false
       },
-      "Resume": {
-        "required": [
-          "filePath",
-          "jobSeekerId"
-        ],
+      "ResumeReadDto": {
         "type": "object",
         "properties": {
           "resumeId": {
             "type": "integer",
             "format": "int32"
           },
+          "filePath": {
+            "type": "string",
+            "nullable": true
+          },
+          "jobSeekerId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResumeUpdateDto": {
+        "required": [
+          "filePath",
+          "jobSeekerId"
+        ],
+        "type": "object",
+        "properties": {
           "filePath": {
             "maxLength": 255,
             "minLength": 0,
@@ -1237,13 +1433,23 @@
           "jobSeekerId": {
             "type": "integer",
             "format": "int32"
-          },
-          "jobSeeker": {
-            "$ref": "#/components/schemas/JobSeeker"
           }
         },
         "additionalProperties": false
       }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "Enter 'Bearer' followed by your JWT token.\r\n\r\nExample: \"Bearer eyJhb...\"",
+        "name": "Authorization",
+        "in": "header"
+      }
     }
-  }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
 }

@@ -1,0 +1,1 @@
+`RJD:\Career Crafter\CareerCrafter\CareerCrafter.API\CareerCrafter.API.csproj¢net6.0òCSharp10

@@ -26,12 +26,13 @@ namespace Services.Implementations
             if (user == null)
                 return null;
 
-            var token = _jwtService.GenerateToken(user.Username, user.Role);
+            var token = _jwtService.GenerateToken(user.UserId,user.Username, user.Role);
 
             return new
             {
                 Token = token,
                 user.Username,
+                UserId = user.UserId,   
                 user.Role,
                 Message = "Login successful"
             };

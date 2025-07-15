@@ -1,0 +1,1 @@
+^RHD:\Career Crafter\CareerCrafter\CareerCrafterMVC\CareerCrafterMVC.csproj¢net6.0òCSharp10

@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
 namespace DAL.Models
@@ -19,5 +19,12 @@ namespace DAL.Models
         public string ContactEmail { get; set; }
 
         public ICollection<JobListing> JobListings { get; set; }
+
+        [Required]
+        public int UserId { get; set; }  
+
+        [ForeignKey("UserId")]
+        public UserInfo User { get; set; }
     }
 }
+

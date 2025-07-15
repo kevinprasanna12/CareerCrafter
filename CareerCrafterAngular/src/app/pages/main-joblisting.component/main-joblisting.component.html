@@ -1,0 +1,33 @@
+<div class="job-list-container">
+    <h2>EXPLORE JOBS</h2>
+  
+    <!-- Inline Search Bar -->
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      (input)="filterJobs()"
+      placeholder="Search by title, company, or location..."
+      class="search-bar"
+    />
+  
+    <div *ngIf="filteredJobListings.length === 0" class="no-jobs">
+      No job listings match your search.
+    </div>
+  
+    <div *ngFor="let job of filteredJobListings" class="job-card">
+      <h3>{{ job.title }}</h3>
+      <p><strong>Company:</strong> {{ job.companyName }}</p>
+      <p><strong>Location:</strong> {{ job.location }}</p>
+      <p><strong>Salary:</strong> {{ job.salary }}</p>
+      <p *ngIf="userRole && userRole == 'Employer'" class="text-warning">Login as Jobseeker to apply for jobs</p>
+
+      <button 
+        *ngIf="userRole && userRole !== 'Employer'"
+        class="apply-button"
+        (click)="applyToJob(job.jobListingId)">
+        Apply
+      </button>    
+    
+    </div>
+  </div>
+  

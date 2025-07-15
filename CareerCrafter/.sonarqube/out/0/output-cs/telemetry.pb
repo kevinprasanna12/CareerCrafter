@@ -1,0 +1,1 @@
+bRLD:\Career Crafter\CareerCrafter\CareerCrafter.DTOs\CareerCrafter.DTOs.csproj¢net6.0òCSharp10

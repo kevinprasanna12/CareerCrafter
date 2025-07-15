@@ -1,0 +1,99 @@
+<div class="parent">
+    <div class="dash-nav">
+        <h1>Career Crafter</h1>
+            <div class="dash-nav-items">
+                <ul>
+                    <li><a class="dash-nav-link" (click)="navigateWithTransition('/home')"><i class="fa-solid fa-house"></i>Home</a></li>
+                    <li><a class="dash-nav-link" (click)="navigateWithTransition('/about')"><i class="fa-solid fa-paperclip"></i>About</a></li>
+                    <li><a class="dash-nav-link" (click)="navigateWithTransition('/mainjoblistings')"><i class="fa-solid fa-layer-group"></i>Jobs</a></li>
+                </ul>
+            </div>
+
+        <div class="logout">
+            <a (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
+        </div>
+    </div>
+
+
+    <div class="dash-applications">
+        <h4 class="application-head">Your Applications</h4>
+      
+        <div *ngIf="loadingApplications" class="text-muted">
+          <div class="spinner-border spinner-border-sm me-2" role="status"></div> Loading your applications...
+        </div>
+      
+        <div *ngIf="!loadingApplications && applications.length === 0" class="alert alert-info p-2">
+          No applications found.
+        </div>
+      
+        <ul *ngIf="!loadingApplications && applications.length > 0" class="list-group">
+          <li *ngFor="let app of applications" class="list-group-item">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <h5 class="jobtitle">{{ app.jobTitle}} <br> <span>{{app.companyName}}</span></h5>
+              <span 
+                    class="badge" 
+                    [ngClass]="{
+                        'status-pending': app.status.toLowerCase() === 'pending',
+                        'status-rejected': app.status.toLowerCase() === 'rejected',
+                        'status-reviewed': app.status.toLowerCase() === 'reviewed',
+                        'status-approved': app.status.toLowerCase() === 'approved',
+                        'bg-primary': !['pending','rejected','reviewed','approved'].includes(app.status.toLowerCase())
+                    }">
+                    {{ app.status }}
+              </span>
+            </div>
+            <small class="text-muted">Applied On: {{ app.appliedDate | date }}</small>
+          </li>
+        </ul>
+      </div>
+      
+
+
+
+      <div class="dash-profile">
+            <h5 class="card-title">Your Profile</h5>
+            <div class="profile-card">
+            <p class="mb-1"><strong><i class="fa-solid fa-user"></i> </strong> {{ jobSeekerProfile?.fullName }}</p>
+            <p class="mb-0"><strong><i class="fa-solid fa-envelope"></i> </strong> {{ jobSeekerProfile?.email }}</p>
+            </div>
+      </div>
+
+
+      <div class="div4">
+        <h1>Your Resume</h1>
+        <div class="">
+          <h5 class="card-title mb-2">Upload/Update Resume</h5>
+      
+          <input 
+            type="file" 
+            (change)="onFileSelected($event)" 
+            class="form-control mb-2" 
+            accept=".pdf,.doc,.docx"
+            placeholder="choose"
+          />
+      
+          <div class="d-flex gap-2">
+            <button 
+              class="btn btn-success btn-sm" 
+              [disabled]="uploading || !selectedFile"
+              (click)="uploadResume()">
+              {{ uploading ? 'Uploading...' : 'Upload Resume' }}
+            </button>
+      
+            <button 
+              class="btn btn-primary btn-sm" 
+              [disabled]="!resumeIdForDownload"
+              (click)="downloadResume()">
+              Your Resume
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      
+      <div class="div5">
+        <h1>Application Applied</h1>
+        <p>{{applicationCount}}</p>
+      </div>
+    
+</div>

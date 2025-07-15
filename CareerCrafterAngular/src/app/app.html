@@ -1,0 +1,5 @@
+<div #pageTransition class="page-transition-overlay"></div>
+<app-navbar *ngIf="!hideNavAndFooter"></app-navbar>
+<router-outlet />
+<app-footer *ngIf="!hideNavAndFooter"></app-footer>
+    

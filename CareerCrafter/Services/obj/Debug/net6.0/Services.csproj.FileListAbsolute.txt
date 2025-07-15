@@ -1,4 +1,7 @@
+D:\Career Crafter\CareerCrafter\Services\bin\Debug\net6.0\xunit.abstractions.dll
+D:\Career Crafter\CareerCrafter\Services\bin\Debug\net6.0\xunit.runner.visualstudio.testadapter.dll
 D:\Career Crafter\CareerCrafter\Services\bin\Debug\net6.0\Services.deps.json
+D:\Career Crafter\CareerCrafter\Services\bin\Debug\net6.0\Services.runtimeconfig.json
 D:\Career Crafter\CareerCrafter\Services\bin\Debug\net6.0\Services.dll
 D:\Career Crafter\CareerCrafter\Services\bin\Debug\net6.0\Services.pdb
 D:\Career Crafter\CareerCrafter\Services\bin\Debug\net6.0\CareerCrafter.Auth.dll
@@ -17,4 +20,5 @@ D:\Career Crafter\CareerCrafter\Services\obj\Debug\net6.0\Services.csproj.Up2Dat
 D:\Career Crafter\CareerCrafter\Services\obj\Debug\net6.0\Services.dll
 D:\Career Crafter\CareerCrafter\Services\obj\Debug\net6.0\refint\Services.dll
 D:\Career Crafter\CareerCrafter\Services\obj\Debug\net6.0\Services.pdb
+D:\Career Crafter\CareerCrafter\Services\obj\Debug\net6.0\Services.genruntimeconfig.cache
 D:\Career Crafter\CareerCrafter\Services\obj\Debug\net6.0\ref\Services.dll

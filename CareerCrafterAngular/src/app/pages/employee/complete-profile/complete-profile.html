@@ -1,0 +1,38 @@
+<div class="container d-flex align-items-center justify-content-center bg-light">
+    <div class="card shadow p-4" style="max-width: 400px; width: 100%;">
+      <h2 class="text-center mb-4">Complete Employer Profile</h2>
+  
+      <form (ngSubmit)="saveProfile()">
+        <div class="mb-3">
+          <label for="companyName" class="form-label">Company Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="companyName"
+            placeholder="Enter your company name"
+            [(ngModel)]="companyName"
+            name="companyName"
+            required
+          />
+        </div>
+  
+        <div class="mb-3">
+          <label for="companyEmail" class="form-label">Company Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="companyEmail"
+            placeholder="Enter your company email"
+            [(ngModel)]="companyEmail"
+            name="companyEmail"
+            required
+          />
+        </div>
+  
+        <button type="submit" class="btn w-100">
+          Save Profile
+        </button>
+      </form>
+    </div>
+  </div>
+  

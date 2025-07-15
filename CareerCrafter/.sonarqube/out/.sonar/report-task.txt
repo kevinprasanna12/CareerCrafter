@@ -1,0 +1,7 @@
+organization=careercrafterorg
+projectKey=careercrafterorg_careercrafter
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.65463
+dashboardUrl=https://sonarcloud.io/dashboard?id=careercrafterorg_careercrafter
+ceTaskId=AZgKLhaqtZHCp2bjPTlF
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZgKLhaqtZHCp2bjPTlF

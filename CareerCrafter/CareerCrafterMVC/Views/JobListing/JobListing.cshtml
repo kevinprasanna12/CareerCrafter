@@ -1,0 +1,45 @@
+﻿@model List<CareerCrafterMVC.Models.JobListing>
+
+@{
+    ViewData["Title"] = "My Job Listings";
+}
+
+<h2 class="mb-3">My Job Listings</h2>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Create New Job Listing</a>
+</p>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">
+        You have not posted any job listings yet.
+    </div>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Location</th>
+                <th>Salary</th>
+                <th>Qualifications</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var job in Model)
+            {
+                <tr>
+                    <td>@job.Title</td>
+                    <td>@job.Location</td>
+                    <td>@job.Salary</td>
+                    <td>@job.Qualifications</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@job.JobListingId" class="btn btn-sm btn-warning">Edit</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

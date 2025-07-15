@@ -1,0 +1,182 @@
+.parent {
+    height: 100vh   ;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 0.75rem;
+    grid-row-gap: 1rem;
+    padding: 1rem;
+    background-color: whitesmoke;
+    }
+    
+    .dash-nav{
+            background-color: #083D77;
+            grid-area: 1 / 1 / 7 / 3;
+            border-radius: 20px;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+            padding: 2rem;
+            position: relative;
+        
+        
+            h1{
+                color: whitesmoke;
+                font-size: 2.5rem;
+                line-height: 1;
+                font-weight: 600;
+                margin-bottom: 5rem;
+            }
+        
+            .dash-nav-items{
+                ul{
+                    padding: 0;
+                }
+                li{
+                    font-size: 1.25rem;
+                    list-style: none;
+                    padding-bottom: 1.25rem;
+                }
+                .dash-nav-link {
+                    color: whitesmoke;
+                    text-decoration: none;
+                    cursor: pointer;
+                    &:hover{
+                        color: #D7A859;
+                    }
+                    i{
+                        color: #D7A859;
+                        padding-right: 0.75rem;
+                        
+                    }
+                    
+                }
+            }
+            .logout{
+                a{
+                    cursor: pointer;
+                    color: #D7A859;
+                    font-weight: 500;
+                    font-size: 1.25rem;
+                    transition: all .3s;
+                    
+                    &:hover{
+                        color: red;
+                    }
+                    i{
+                        padding-right: 0.5rem;
+                       
+                    }
+                }
+        
+                position: absolute;
+                bottom: 4rem;
+            }
+        }
+
+    .dash-applications {
+         grid-area: 1 / 3 / 7 / 7; 
+         padding: 1.5rem;
+         border-radius: 20px;
+         background-color: white;
+         box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+         overflow-y: scroll;
+
+            &::-webkit-scrollbar{
+                display: none;
+            }
+
+         li{
+            background-color: #f5f5f5;
+            margin-bottom: 1rem;
+            border-radius: 0.75rem;
+            padding: 1rem 1rem;
+         }
+
+         h4{
+            font-size: 1.75rem;
+            margin-bottom: 2rem;
+         }
+         .jobtitle{
+            font-weight: 600;
+            font-size: 1.5rem;
+            line-height: 1;
+            span{
+                font-weight: 400;
+                font-size: 1rem;
+                
+            }
+        }
+        .badge{
+            padding: .4rem;
+        }
+        .status-pending{
+            background-color: #D7A859;
+        }
+        .status-approved{
+            background-color: #083D77;
+        }
+        .status-reviewed{
+            background-color: #7e7e7e;
+        }
+        .status-rejected{
+            background-color: red;
+        }
+        }
+
+
+
+    .dash-profile {
+         grid-area: 1 / 7 / 3 / 9; 
+         border-radius: 20px;
+         background-color: #D7A859;
+         box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+         padding: 1.5rem;
+
+         h5{
+            font-size: 2rem;
+            margin-bottom: 2rem;
+         }
+         .profile-card{
+            display: flex;
+            flex-direction: column;
+            font-size: 1.25rem;
+            gap: .3rem;            
+            background: transparent;
+
+            i{
+                padding-right:.3rem ;
+            }
+         }
+        }
+
+
+    .div4 {
+         grid-area: 3 / 7 / 5 / 9;
+         border-radius: 20px;
+         background-color: white;
+         box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+         padding: 1.5rem;
+
+         h1{
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+         }
+
+         }
+    .div5 { 
+        grid-area: 5 / 7 / 7 / 9;
+        border-radius: 20px;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        padding: 1.5rem;
+
+        h1{
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        p{
+            color: #D7A859;
+            font-size: 5rem;
+            place-self: center;
+        }
+
+    }

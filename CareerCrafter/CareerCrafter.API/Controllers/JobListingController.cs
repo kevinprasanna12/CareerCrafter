@@ -1,4 +1,4 @@
-﻿using DAL.Models;
+﻿using CareerCrafter.DTOs.JobListingDTOs;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Services.Interfaces;
@@ -6,9 +6,9 @@ using System.Security.Claims;
 
 namespace CareerCrafterAPI.Controllers
 {
-    [Authorize]
-    [Route("api/[controller]")]
     [ApiController]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class JobListingController : ControllerBase
     {
         private readonly IJobListingService _service;
@@ -19,35 +19,63 @@ namespace CareerCrafterAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<JobListing>>> GetAll()
+        public async Task<ActionResult<IEnumerable<JobListingReadDto>>> GetAll()
         {
-            var jobs = await _service.GetAllAsync();
+            var jobs = await _service.GetAllJobListingsAsync();
             return Ok(jobs);
         }
 
+        [Authorize(Roles = "Employer")] 
+        
         [HttpGet("{id}")]
-        public async Task<ActionResult<JobListing>> GetById(int id)
+        public async Task<ActionResult<JobListingReadDto>> GetById(int id)
         {
             var job = await _service.GetByIdAsync(id);
             return job == null ? NotFound() : Ok(job);
         }
 
+
         [Authorize(Roles = "Employer")]
+        [ProducesResponseType(typeof(JobListingReadDto), StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpPost]
-        public async Task<ActionResult<JobListing>> Create(JobListing jobListing)
+        public async Task<ActionResult<JobListingReadDto>> Create(JobListingCreateDto dto)
         {
-            var created = await _service.CreateAsync(jobListing);
+            var username = User.Identity?.Name ?? string.Empty;
+            var created = await _service.CreateAsync(dto, username);
             return CreatedAtAction(nameof(GetById), new { id = created.JobListingId }, created);
         }
 
+
+
         [Authorize(Roles = "Employer")]
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, JobListing jobListing)
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> Update(int id, JobListingUpdateDto dto)
         {
-            var username = User.Identity?.Name ?? string.Empty;
-            var updated = await _service.UpdateAsync(id, jobListing, username);
-            return updated ? NoContent() : Forbid();
+            var userIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(userIdClaim))
+                return Unauthorized("UserId claim missing in token.");
+
+            int userId = int.Parse(userIdClaim);
+
+            var updated = await _service.UpdateAsync(id, dto,userId);
+
+            if (!updated)
+            {
+                // Decide whether to return NotFound or Forbid:
+                // If your service returns false for both "not found" and "forbidden",
+                // you may initially return NotFound, or:
+                return Forbid(); // or return NotFound();
+            }
+
+            Console.WriteLine("Update succeeded."); // Debug
+            return NoContent();
         }
+
+
 
         [Authorize(Roles = "Employer")]
         [HttpDelete("{id}")]
@@ -60,10 +88,13 @@ namespace CareerCrafterAPI.Controllers
 
         [Authorize(Roles = "Employer")]
         [HttpGet("my-jobs")]
-        public async Task<IActionResult> GetMyJobs()
+        public async Task<ActionResult<IEnumerable<JobListingReadDto>>> GetMyJobs()
         {
-            var username = User.Identity?.Name ?? string.Empty;
-            var jobs = await _service.GetMyJobsAsync(username);
+            var userIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            if (!int.TryParse(userIdClaim, out var userId))
+                return Unauthorized("Invalid UserId in token.");
+
+            var jobs = await _service.GetMyJobsAsync(userId);
             return Ok(jobs);
         }
     }

@@ -1,13 +1,15 @@
-﻿using DAL.Models;
+﻿using CareerCrafter.DTOs.EmployeeDTOs;
 
 namespace Services.Interfaces
 {
     public interface IEmployeeService
     {
-        Task<IEnumerable<Employee>> GetAllEmployeesAsync();
-        Task<Employee?> GetEmployeeByIdAsync(int id);
-        Task<Employee> CreateEmployeeAsync(Employee employee);
-        Task<bool> UpdateEmployeeAsync(int id, Employee employee);
+        Task<IEnumerable<EmployeeReadDto>> GetAllEmployeesAsync();
+        Task<EmployeeReadDto?> GetEmployeeByIdAsync(int id);
+        Task<EmployeeReadDto> CreateEmployeeAsync(EmployeeCreateDto dto,int userId);
+        Task<bool> UpdateEmployeeAsync(int id, EmployeeUpdateDto dto);
         Task<bool> DeleteEmployeeAsync(int id);
+        Task<EmployeeReadDto?> GetEmployeeByUserIdAsync(int userId);
+
     }
 }

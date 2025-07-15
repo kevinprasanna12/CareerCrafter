@@ -1,0 +1,1 @@
+NR8D:\Career Crafter\CareerCrafter\Services\Services.csproj¢net6.0òCSharp10

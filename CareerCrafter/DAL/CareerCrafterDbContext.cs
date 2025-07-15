@@ -54,12 +54,18 @@ namespace DAL
                 .HasForeignKey<Resume>(r => r.JobSeekerId)
                 .OnDelete(DeleteBehavior.Cascade);
 
+            // ✅ Added: UserInfo ➔ JobSeeker with CASCADE
+            modelBuilder.Entity<JobSeeker>()
+                .HasOne(js => js.User)
+                .WithMany()
+                .HasForeignKey(js => js.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
+
             // Constraints
             modelBuilder.Entity<Resume>()
                 .HasIndex(r => r.JobSeekerId)
                 .IsUnique();
 
-            // Check constraint on Role
             modelBuilder.Entity<UserInfo>()
                 .HasCheckConstraint("CK_UserInfo_Role", "Role IN ('Employer', 'JobSeeker')");
         }

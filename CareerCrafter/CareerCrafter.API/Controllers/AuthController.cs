@@ -4,8 +4,9 @@ using Services.Interfaces;
 
 namespace CareerCrafter.API.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class AuthController : ControllerBase
     {
         private readonly IAuthService _authService;
@@ -27,7 +28,7 @@ namespace CareerCrafter.API.Controllers
         {
             var result = await _authService.RegisterAsync(dto);
 
-            // if there's an error key, return bad request
+            // if there's an error key -- return bad request
             if (result is { } && result.GetType().GetProperty("Error") != null)
                 return BadRequest(result);
 

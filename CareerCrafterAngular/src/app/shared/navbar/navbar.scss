@@ -1,0 +1,98 @@
+.navbar{
+  background-color: whitesmoke;
+  color: #151515;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: 2rem 4rem;
+  padding:10px;
+  border-radius: 4rem;
+
+  .container{
+    width: 100%;
+
+    .navbar-brand{
+      color: #151515;
+      font-weight: 900;
+      font-size: 1.5rem;
+    }
+    .nav-link{
+      color: #151515;
+      font-weight: 500;
+      font-size: 1rem;
+      cursor: pointer;
+      margin:0px 10px; 
+      transition: all .3s ;
+        &:hover{
+          color: #D7A859;
+          transform: translateY(-2px);
+          letter-spacing: 3px;
+          font-weight: 600;
+        } 
+    }
+
+  }
+
+  .loginbtn{
+    font-weight: 600;
+    border: #083D77 solid 2px;
+    color: #083D77;
+    padding: .5rem 1.2rem;
+    margin-right:.8rem ;
+    text-decoration: none;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    transition: all .5s;
+      &:hover{
+        color: #D7A859;
+        background-color: #083D77;
+        transform: translate(2px ,-2px);
+      }
+
+  }
+  .signbtn{
+    color: #151515;
+    background-color: #D7A859;
+    padding: .5rem 1.2rem;
+    text-decoration: none;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    transition: all .5s;
+    
+      &:hover{
+        transform: translate(2px ,-2px);
+      }
+  }
+}
+
+.dropdown{
+
+  .btn{
+    border: #083D77 2px solid;
+
+    &::after{
+      color: #083D77;
+    }
+    &:hover{
+      background-color: #083D77;
+      &::after{
+        color: #D7A859;
+      }
+      i{
+        color: #D7A859;
+      }
+    }
+  }
+
+    i{
+      color: #083D77;
+    }
+    .dropdown-menu{
+      li {
+        a{
+          cursor: pointer;
+        }
+        
+      }
+    }
+    
+ 
+}

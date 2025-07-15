@@ -1,0 +1,1 @@
+bRLD:\Career Crafter\CareerCrafter\CareerCrafter.Auth\CareerCrafter.Auth.csproj¢net6.0òCSharp10

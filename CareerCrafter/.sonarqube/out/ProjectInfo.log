@@ -1,0 +1,30 @@
+Product projects
+---------------------------------------
+
+
+Test projects
+---------------------------------------
+D:\Career Crafter\CareerCrafter\CareerCrafter.DTOs\CareerCrafter.DTOs.csproj
+D:\Career Crafter\CareerCrafter\CareerCrafter.Auth\CareerCrafter.Auth.csproj
+D:\Career Crafter\CareerCrafter\DAL\DAL.csproj
+D:\Career Crafter\CareerCrafter\CareerCrafterMVC\CareerCrafterMVC.csproj
+D:\Career Crafter\CareerCrafter\Services\Services.csproj
+D:\Career Crafter\CareerCrafter\CareerCrafter.API\CareerCrafter.API.csproj
+D:\Career Crafter\CareerCrafter\CareerCrafterAPI.Tests\CareerCrafterAPI.Tests.csproj
+
+
+Invalid projects
+---------------------------------------
+{none}
+
+
+Skipped projects
+---------------------------------------
+{none}
+
+
+Excluded projects
+---------------------------------------
+{none}
+
+

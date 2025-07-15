@@ -1,0 +1,30 @@
+﻿@model CareerCrafterMVC.Models.Employee
+
+@{
+    ViewData["Title"] = "Complete Profile";
+}
+
+<h2 class="mt-4 mb-3">Complete Employer Profile</h2>
+
+<form asp-action="CompleteProfile" method="post" class="mt-3">
+
+    <div class="form-group mb-3">
+        <label asp-for="CompanyName" class="form-label"></label>
+        <input asp-for="CompanyName" class="form-control" />
+        <span asp-validation-for="CompanyName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="ContactEmail" class="form-label"></label>
+        <input asp-for="ContactEmail" class="form-control" />
+        <span asp-validation-for="ContactEmail" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

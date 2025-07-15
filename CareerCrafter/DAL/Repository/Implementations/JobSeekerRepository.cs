@@ -19,5 +19,10 @@ namespace DAL.Repositories
         {
             return await _context.JobSeekers.FirstOrDefaultAsync(j => j.Email == email);
         }
+
+        public async Task<JobSeeker> GetByUserIdAsync(int userId)
+        {
+            return await _context.JobSeekers.FirstOrDefaultAsync(js => js.UserId == userId);
+        }
     }
 }

@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "CareerCrafter.API\\CareerCrafter.API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "CareerCrafterMVC\\CareerCrafterMVC.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

@@ -1,0 +1,127 @@
+<div class="dashboard">
+    <div class="dash-nav">
+        <h1>Career <br><span class="m-4"> Crafter</span></h1>
+            <div class="dash-nav-items">
+                <ul>
+                    <li><a class="dash-nav-link" (click)="navigateWithTransition('/home')"><i class="fa-solid fa-house"></i>Home</a></li>
+                    <li><a class="dash-nav-link" (click)="navigateWithTransition('/about')"><i class="fa-solid fa-paperclip"></i>About</a></li>
+                    <li><a class="dash-nav-link" (click)="navigateWithTransition('/mainjoblistings')"><i class="fa-solid fa-layer-group"></i>Jobs</a></li>
+                </ul>
+            </div>
+
+        <div class="logout">
+            <a (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
+        </div>
+    </div>
+
+
+    <div class="dash-Joblisting">
+        <div class="dash-joblisting-header d-flex justify-content-between mb-4">
+            <h1 class="dash-Joblisting-head">Job Listings</h1>
+            <div class="align-content-center">
+            <a (click)="toggleAddJobListing()" class="add-btn">Add Jobs</a>    
+            </div>
+        </div>
+            <!-- Add Job Listing Form -->
+                <ul *ngIf="showAddForm" class="add-joblisting-form">
+
+                    <h1 class="text-white">Enter Details </h1>
+
+                    <li>
+                        <input type="text" [(ngModel)]="newJobListing.title" placeholder="Title">
+                    </li>
+                    <li>
+                        <textarea [(ngModel)]="newJobListing.description" placeholder="Description"></textarea>
+                    </li>
+                    <li>
+                        <input type="text" [(ngModel)]="newJobListing.location" placeholder="Location">
+                    </li>
+                    <li>
+                        <input type="text" [(ngModel)]="newJobListing.qualifications" placeholder="Qualifications">
+                    </li>
+                    <li>
+                        <input type="number" [(ngModel)]="newJobListing.salary" placeholder="Salary">
+                    </li>
+                    <li>
+                        <button (click)="submitJobListing()" class="submit-button">Submit</button>
+                        <button (click)="toggleAddJobListing()" class="cancel-button">Cancel</button>
+                    </li>
+                </ul>
+
+        <div *ngIf="jobListings.length > 0; else noJobs">
+            <div *ngFor="let job of jobListings; let i = index" class="joblisting-card p-3 mb-3 border rounded bg-light shadow-sm">
+                <div class="d-flex justify-content-between align-items-start">
+                    <h1 class="jobtitle mb-1">{{ job.title }} <br> <span>{{job.companyName}}</span></h1>
+                    <span class="text-muted"><i class="fa-solid fa-location-dot me-1"></i>{{ job.location }}</span>
+                </div>
+                
+                <!-- Skills (Optional) -->
+                <div *ngIf="false" class="mt-1">
+                    <small class="text-muted">Skills: Angular, .NET, SQL</small> <!-- Placeholder if skills are added later -->
+                </div>
+    
+                <div class="joblisting-qualification mt-3">
+                    <strong>Qualifications:</strong> {{ job.qualifications }}
+                </div>
+    
+                <div class="d-flex justify-content-between ">
+                    <h5>
+                        <span class="badge">Salary: {{ job.salary | currency:'INR' }}</span>
+                    </h5>
+
+                    <div>
+                        <a class="edit-btn" (click)="editJobListing(job.jobListingId)">Modify</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <ng-template #noJobs>
+            <p class="text-muted">You have not posted any job listings yet.</p>
+        </ng-template>
+
+    </div>
+
+    
+    <div class="dash-JobCount container">
+            <h5>Total Jobs count</h5>
+            <span>{{jobCount}}</span>
+    </div>
+    
+    
+    <div class="dash-Application container">
+        <ul class="list-unstyled grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <h1 class="Application-head">Applications</h1>
+          <li
+            *ngFor="let application of applications"
+            class="mb-3 rounded-2xl hover:shadow-lg transition-shadow relative flex flex-col justify-between"
+            >
+            <div>
+              <h1 class="font-bold text-gray-800">{{ application.jobSeekerName }}</h1>
+              <p class="">{{ application.jobTitle }}</p>
+              <p class="text-sm status" 
+              [ngClass]="{
+                'status-pending': application.status.toLowerCase() === 'pending',
+                'status-approved': application.status.toLowerCase() === 'approved',
+                'status-reviewed': application.status.toLowerCase() === 'reviewed',
+                'status-rejected': application.status.toLowerCase() === 'rejected',
+                
+              }"
+              >Status: {{ application.status }}</p>
+            </div>
+            <button
+              class="self-end rounded-lg hover:bg-blue-700 transition-colors"
+              (click)="viewApplication(application.applicationId)"
+            >
+              View
+            </button>
+          </li>
+        </ul>
+      </div>
+      
+    <div class="dash-AppliedCount">
+        <h5>Active Job Listing</h5>
+        <span>{{ appliedCount }}</span>
+    </div>
+    
+</div>

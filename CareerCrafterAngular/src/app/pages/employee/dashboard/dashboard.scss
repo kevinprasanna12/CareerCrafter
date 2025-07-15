@@ -1,0 +1,301 @@
+.dashboard{
+    background-color: #efefef;
+    height: 100svh;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 0.75rem;
+    padding: 1rem;
+}
+
+.dash-nav{
+    background-color: #083D77;
+    grid-area: 1 / 1 / 6 / 2;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    padding: 2rem;
+    position: relative;
+
+
+    h1{
+        color: whitesmoke;
+        font-size: 2rem;
+        line-height: 1;
+        font-weight: 600;
+        margin-bottom: 3rem;
+    }
+
+    .dash-nav-items{
+        ul{
+            padding: 0;
+        }
+        li{
+            font-size: 1rem;
+            list-style: none;
+            padding-bottom: 1.25rem;
+        }
+        .dash-nav-link {
+            color: whitesmoke;
+            text-decoration: none;
+            cursor: pointer;
+            &:hover{
+                color: #D7A859;
+            }
+            i{
+                color: #D7A859;
+                padding-right: 0.75rem;
+                
+            }
+            
+        }
+    }
+    .logout{
+        a{
+            cursor: pointer;
+            color: #D7A859;
+            font-weight: 500;
+            font-size: 1.2rem;
+            transition: all .3s;
+            
+            &:hover{
+                color: red;
+            }
+            i{
+                padding-right: 0.5rem;
+               
+            }
+        }
+
+        position: absolute;
+        bottom: 4rem;
+    }
+}
+
+
+
+.dash-Joblisting{
+    background-color: white;
+    grid-area: 1 / 2 / 6 / 5;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    padding: 1.5rem;
+    overflow-y: scroll;
+    
+    &::-webkit-scrollbar{
+        display: none;
+    }
+
+    .dash-Joblisting-head{
+        font-size: 2rem;
+        place-self: center;
+    }
+
+    .jobtitle{
+        line-height: 1;
+        font-size: 1.5rem;
+        font-weight: 800;
+
+        span{
+            font-weight: 400;
+            font-size: 1rem;
+        }
+    }
+
+    .joblisting-qualification{
+        font-size: 1rem;
+        font-weight: 300;
+    }
+
+    .badge{
+        background: #D7A859;
+        color: #083D77;
+        font-size: .8rem;
+    }
+    .edit-btn{
+        text-decoration: none;
+        border: solid 3px #083D77;
+        color: #083D77;
+        padding: 0.2rem 1rem;
+        border-radius: 0.75rem;
+        cursor: pointer;
+        transition: all .3s;
+        font-size: .8rem;
+            &:hover{
+                background-color: #083D77;
+                color: whitesmoke;
+            }
+    }
+
+
+    //header and add button
+    .add-joblisting-form {
+        list-style: none;
+        padding: 0;
+        margin: 2rem auto;
+        display: flex;
+        flex-direction: column;
+        gap: .75rem;
+        background-color: #083D77;
+        padding: 2rem;
+        width: 60%;
+        border-radius: .75rem;
+    }
+    
+    .add-joblisting-form li {
+        margin-bottom: 0.5rem;
+        display: inline;
+        margin: auto;
+        
+        input , textarea{
+            width: 20rem;
+            padding: .25rem;
+            border-radius: .25rem;
+        }
+    }
+    
+    .add-btn{
+        text-decoration: none;
+        color: #D7A859;
+        padding: 0.5rem;
+        place-self: center;
+        border: solid 4px #D7A859;
+        border-radius: 0.75rem;
+        transition: all .3s;
+        cursor: pointer;
+
+        &:hover{
+            background-color: #083D77;
+            border: solid 4px #083D77;
+
+        }
+    }
+
+    .submit-button, .cancel-button {
+        border: none;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        border-radius: 4px;
+        margin-right: 1rem;
+        transition: all .3s;
+
+        &:hover{
+            transform: translateY(1px);
+        }
+    }
+    .submit-button{
+        background-color: #D7A859;
+    }
+    .cancel-button {
+        background-color: #dc3545;
+    }
+    
+
+}
+.dash-JobCount{
+    background-color: white;
+    color: #151515;
+    grid-area: 1 / 5 / 3 / 6;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    padding: 1.5rem;
+    padding: 2rem;
+    position: relative;
+    h5{
+        line-height: 1;
+        font-size: 2rem;
+    }
+    span{
+        font-size: 5rem;
+        position: absolute;
+        bottom: 2rem;
+    }
+
+}
+.dash-AppliedCount{
+    background-color: #D7A859;
+    color: #151515;
+    grid-area: 1 / 6 / 3 / 7;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    padding: 2rem;
+    position: relative;
+
+    h5{
+        line-height: 1;
+        font-size: 2rem;
+    }
+    span{
+        font-size: 5rem;
+        position: absolute;
+        bottom: 2rem;
+    }
+
+}
+.dash-Application{
+    background-color: white;
+    grid-area: 3 / 5 / 6 / 7;   
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    padding: 1.5rem;
+    overflow-y: scroll;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+
+    .Application-head{
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    li{
+        background-color: whitesmoke;
+        border-radius: 0.75rem;
+        padding:1rem;
+        position: relative;
+        h1{
+            font-size: 1.2rem;
+            margin-bottom: .5rem;
+        }
+        p{
+            font-size: .8rem;
+            margin: 0;
+        }
+        .status{
+            display: inline-block;
+            padding: 1px 5px;
+            border-radius: .25rem;
+            color: whitesmoke;
+        }
+
+        .status-pending{
+            background-color: #D7A859;
+        }
+        .status-approved{
+            background-color: #083D77;
+        }
+        .status-reviewed{
+            background-color: #7e7e7e;
+        }
+        .status-rejected{
+            background-color: red;
+        }
+
+        button{
+            position: absolute;
+            right: 1rem;
+            bottom: 1rem;
+            color: #083D77;
+            font-size: .8rem;
+            padding: .1rem 1rem;
+            border: 3px solid #083D77;
+            border-radius: 0.25rem;
+            transition: all .2s;
+
+            &:hover{
+                color: white;
+                background-color: #083D77;
+            }
+        }
+    }
+}

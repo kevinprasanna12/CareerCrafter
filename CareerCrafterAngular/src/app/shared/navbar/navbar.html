@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" routerLink="/">CareerCrafter</a>
+  
+      <!-- Toggle button for mobile -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarNav">
+
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link" (click)="navigateWithTransition('/home')">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="navigateWithTransition('/about')">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="navigateWithTransition('/mainjoblistings')">Jobs</a>
+          </li>
+        </ul>
+  
+        <!-- Right-side buttons -->
+        <div *ngIf="!isLoggedIn; else loggedInTemplate" class="d-flex">
+          <a (click)="navigateWithTransition('/login')" class="loginbtn">Login</a>
+          <a (click)="navigateWithTransition('/signup')" class="signbtn">Sign Up</a>
+        </div>
+
+        <ng-template #loggedInTemplate>
+          <div class="dropdown">
+            <button
+              class="btn btn-outline-secondary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+            <i class="fa-solid fa-user"></i>
+             </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" (click)="navigateToDashboard()">View Profile</a></li>
+              <li><button class="dropdown-item" (click)="logout()">Logout</button></li>
+            </ul>
+          </div>
+        </ng-template>
+
+      </div>
+    </div>
+  </nav>
+  
